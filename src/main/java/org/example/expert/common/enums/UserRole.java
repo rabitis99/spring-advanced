@@ -1,6 +1,6 @@
-package org.example.expert.domain.user.enums;
+package org.example.expert.common.enums;
 
-import org.example.expert.domain.common.exception.InvalidRequestException;
+import org.example.expert.common.exception.custom.InvalidRequestException;
 
 import java.util.Arrays;
 

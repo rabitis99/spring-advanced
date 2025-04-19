@@ -1,4 +1,4 @@
-package org.example.expert.config;
+package org.example.expert.common.aop;
 
 import com.google.gson.Gson;
 import io.jsonwebtoken.Claims;
@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
+import org.example.expert.common.jwt.JwtUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;

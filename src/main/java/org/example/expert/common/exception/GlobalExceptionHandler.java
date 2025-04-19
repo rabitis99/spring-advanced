@@ -1,8 +1,8 @@
-package org.example.expert.config;
+package org.example.expert.common.exception;
 
-import org.example.expert.domain.auth.exception.AuthException;
-import org.example.expert.domain.common.exception.InvalidRequestException;
-import org.example.expert.domain.common.exception.ServerException;
+import org.example.expert.common.exception.custom.AuthException;
+import org.example.expert.common.exception.custom.InvalidRequestException;
+import org.example.expert.common.exception.custom.ServerException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;

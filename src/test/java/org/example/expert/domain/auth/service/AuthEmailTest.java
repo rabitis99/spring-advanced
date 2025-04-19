@@ -1,12 +1,12 @@
 package org.example.expert.domain.auth.service;
 
-import org.example.expert.config.JwtUtil;
-import org.example.expert.config.PasswordEncoder;
+import org.example.expert.common.jwt.JwtUtil;
+import org.example.expert.common.config.PasswordEncoder;
 import org.example.expert.domain.auth.dto.request.SignupRequest;
 import org.example.expert.domain.auth.dto.response.SignupResponse;
-import org.example.expert.domain.common.exception.InvalidRequestException;
+import org.example.expert.common.exception.custom.InvalidRequestException;
 import org.example.expert.domain.user.entity.User;
-import org.example.expert.domain.user.enums.UserRole;
+import org.example.expert.common.enums.UserRole;
 import org.example.expert.domain.user.repository.UserRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
