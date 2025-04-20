@@ -1,7 +1,7 @@
-package org.example.expert.domain.comment.controller;
+package org.example.expert.domain.admin.controller;
 
 import lombok.RequiredArgsConstructor;
-import org.example.expert.domain.comment.service.CommentAdminService;
+import org.example.expert.domain.admin.service.CommentAdminService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
