@@ -10,6 +10,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class CommentSaveRequest {
 
-    @NotBlank
+    @NotBlank(message = "댓글은 빈칸이면 안됩니다")
     private String contents;
 }

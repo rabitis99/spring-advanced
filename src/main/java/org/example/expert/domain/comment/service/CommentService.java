@@ -70,7 +70,7 @@ public class CommentService {
         Comment comment =commentRepository.findById(commentId).
                 orElseThrow(()-> new InvalidRequestException("댓글을 찾을 수 없습니다."));
 
-        if (user.getId().equals(comment.getUser().getId())){
+        if (!user.getId().equals(comment.getUser().getId())){
             throw new InvalidRequestException("댓글을 바꿀 권한이 없습니다");
         }
 
@@ -84,7 +84,7 @@ public class CommentService {
         Comment comment =commentRepository.findById(commentId).
                 orElseThrow(()-> new InvalidRequestException("댓글을 찾을 수 없습니다."));
 
-        if (user.getId().equals(comment.getUser().getId())){
+        if (!user.getId().equals(comment.getUser().getId())){
             throw new InvalidRequestException("댓글을 바꿀 권한이 없습니다");
         }
 
