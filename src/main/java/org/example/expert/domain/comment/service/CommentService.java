@@ -2,6 +2,7 @@ package org.example.expert.domain.comment.service;
 
 import lombok.RequiredArgsConstructor;
 import org.example.expert.domain.comment.dto.request.CommentSaveRequest;
+import org.example.expert.domain.comment.dto.request.CommentUpdateRequest;
 import org.example.expert.domain.comment.dto.response.CommentResponse;
 import org.example.expert.domain.comment.dto.response.CommentSaveResponse;
 import org.example.expert.domain.comment.entity.Comment;
@@ -61,5 +62,32 @@ public class CommentService {
             dtoList.add(dto);
         }
         return dtoList;
+    }
+    @Transactional
+    public void updateComments(AuthUser authUser, long commentId, CommentUpdateRequest commentUpdateRequest){
+        User user = User.fromAuthUser(authUser);
+
+        Comment comment =commentRepository.findById(commentId).
+                orElseThrow(()-> new InvalidRequestException("댓글을 찾을 수 없습니다."));
+
+        if (user.getId().equals(comment.getUser().getId())){
+            throw new InvalidRequestException("댓글을 바꿀 권한이 없습니다");
+        }
+
+        comment.update(commentUpdateRequest.getContents());
+    }
+
+    @Transactional
+    public void deleteComment(AuthUser authUser,long commentId) {
+        User user = User.fromAuthUser(authUser);
+
+        Comment comment =commentRepository.findById(commentId).
+                orElseThrow(()-> new InvalidRequestException("댓글을 찾을 수 없습니다."));
+
+        if (user.getId().equals(comment.getUser().getId())){
+            throw new InvalidRequestException("댓글을 바꿀 권한이 없습니다");
+        }
+
+        commentRepository.deleteById(commentId);
     }
 }
