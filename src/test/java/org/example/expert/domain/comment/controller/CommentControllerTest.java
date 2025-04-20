@@ -16,7 +16,6 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.BDDMockito.given;
@@ -46,7 +45,6 @@ class CommentControllerTest {
         given(commentService.saveComment(any(AuthUser.class), eq(todoId), any(CommentSaveRequest.class)))
                 .willReturn(new CommentSaveResponse(100L, "댓글 내용입니다.", userResponse));
 
-        // given
         String token = jwtUtil.createToken(1L, "test@example.com", UserRole.USER);
         CommentSaveRequest request = new CommentSaveRequest("댓글 내용입니다.");
 

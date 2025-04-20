@@ -73,7 +73,6 @@ public class AuthEmailTest {
         SignupResponse signupResponse = authService.signup(signupRequest);
 
         // then
-
         assertEquals(bearerToken, signupResponse.getBearerToken(), "토큰이 예상과 다릅니다");
     }
 }
