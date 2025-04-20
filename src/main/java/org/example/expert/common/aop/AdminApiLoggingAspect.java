@@ -27,7 +27,7 @@ public class AdminApiLoggingAspect {
 
     private static final Logger logger = LoggerFactory.getLogger(AdminApiLoggingAspect.class);
 
-    @Around("execution(* org.example.expert.domain.admin.controller(..))")
+    @Around("execution(* org.example.expert.domain.admin.controller..*(..))")
 
     public Object logAdminApi(ProceedingJoinPoint joinPoint) throws Throwable {
         HttpServletRequest request =
@@ -56,3 +56,5 @@ public class AdminApiLoggingAspect {
         return response;
     }
 }
+
+
