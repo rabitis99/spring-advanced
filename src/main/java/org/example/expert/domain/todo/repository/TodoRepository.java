@@ -1,7 +1,6 @@
 package org.example.expert.domain.todo.repository;
 
 import org.example.expert.domain.todo.entity.Todo;
-import org.example.expert.domain.user.entity.User;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.EntityGraph;
@@ -26,7 +25,4 @@ public interface TodoRepository extends JpaRepository<Todo, Long> {
 //    @EntityGraph(attributePaths = {"user"})
 //    Optional<Todo> findById(Long id);
 
-
-
-    int countById(Long todoId);
 }
